@@ -6,7 +6,7 @@ comprehend = boto3.client(service_name='comprehend',
 def lambda_handler(event, context):
     for record in event['Records']:
         payload = record["body"]
-        print(str(payload))
+        print(payload)
 
         print('Calling DetectSentiment')
         response = comprehend.detect_sentiment(Text=payload,
